@@ -7,12 +7,27 @@ import {createBrowserRouter,createRoutesFromElements,Route,RouterProvider} from 
 import Login from "./pages/auth/Login.jsx"
 import Register from './pages/auth/Register.jsx'
 import store from './redux/store.js'
+import PrivateRoute from './components/PrivateRoute.jsx'
+import Profile from './pages/User/Profile.jsx'
+import AdminRoute from './pages/Admin/AdminRoute.jsx'
+import UserList from './pages/Admin/UserList.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>}>
     <Route path='/login' element={<Login/>}/>
     <Route path='/register' element={<Register/>}/>
+
+
+    
+<Route path='' element={<PrivateRoute/>}>
+< Route path='/profile' element={<Profile/>}/>
     </Route>
+
+
+    <Route path='/admin' element={<AdminRoute/>}>
+    <Route path="userlist" element={<UserList />} />
+    </Route>
+</Route>
 
   )
 )

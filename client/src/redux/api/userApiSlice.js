@@ -28,7 +28,7 @@ import {apiSlice} from "./apiSlice"
         profile : builder.mutation({
             query : (data)=>({
                 url : `${USER_URL}/profile`,
-                method : "POST",
+                method : "PUT",
                 body : data
             })
         }),
@@ -66,4 +66,4 @@ import {apiSlice} from "./apiSlice"
     })
  })
 
- export const {useLoginMutation,useRegisterMutation,useLogoutMutation,useProfileMutation,useGetAllUsersQuery,useDeleteUserMutation,useGetUserDetailsQuery,useUpdateUserMutation} = userApiSlice
+ export const {useLoginMutation,useRegisterMutation,useLogoutMutation,useGetAllUsersQuery,useDeleteUserMutation,useGetUserDetailsQuery,useUpdateUserMutation,useProfileMutation} = userApiSlice

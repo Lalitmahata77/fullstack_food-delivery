@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Loader from "../../components/Loder";
+import Loder from "../../components/Loder";
 import { useLoginMutation } from "../../redux/api/userApiSlice";
 import { setCredentials } from "../../redux/features/auth/authApiSlice";
 import { toast } from "react-toastify";
@@ -42,12 +42,12 @@ const submitHandler = async (e) => {
           <div className="border border-gray-300 rounded-lg p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] max-md:mx-auto">
             <form className="space-y-4" onSubmit={submitHandler}>
               <div className="mb-8">
-                <h3 className="text-gray-800 text-3xl font-extrabold">Sign in</h3>
-                <p className="text-gray-500 text-sm mt-4 leading-relaxed">Sign in to your account and explore a world of possibilities. Your journey begins here.</p>
+                <h3 className=" text-white text-3xl font-extrabold">Sign in</h3>
+                <p className="text-white text-sm mt-4 leading-relaxed">Sign in to your account and explore a world of possibilities. Your journey begins here.</p>
               </div>
 
               <div>
-                <label className="text-gray-800 text-sm mb-2 block">Email</label>
+                <label className="text-white text-sm mb-2 block">Email</label>
                 <div className="relative flex items-center">
                   <input name="email" type="email" required className="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-blue-600" placeholder="Enter user email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-4" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ const submitHandler = async (e) => {
                 </div>
               </div>
               <div>
-                <label className="text-gray-800 text-sm mb-2 block">Password</label>
+                <label className="text-white text-sm mb-2 block">Password</label>
                 <div className="relative flex items-center">
                   <input name="password" type="password" required className="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-blue-600" placeholder="Enter password" value={password} onChange={(e)=>setPassword(e.target.value)} />
                   <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-4 cursor-pointer" viewBox="0 0 128 128">
@@ -87,7 +87,7 @@ const submitHandler = async (e) => {
                 </button>
               </div>
 
-              <p className="text-sm !mt-8 text-center text-gray-800">Don't have an account <Link to="/register" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</Link></p>
+              <p className="text-sm !mt-8 text-center text-white">Don't have an account <Link to="/register" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</Link></p>
             </form>
           </div>
           <div className="lg:h-[400px] md:h-[300px] max-md:mt-8">
