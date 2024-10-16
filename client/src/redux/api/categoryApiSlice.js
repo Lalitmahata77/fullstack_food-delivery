@@ -11,10 +11,10 @@ createCategory : builder.mutation({
     })
 }),
 updateCategory : builder.mutation({
-    query : ({data,categoryId})=>({
+    query : ({updatedCategory,categoryId})=>({
 url : `${CATEGORY_URL}/${categoryId}`,
 method : "PUT",
-body : data
+body : updatedCategory
     })
 }),
 deleteCatewgory : builder.mutation({

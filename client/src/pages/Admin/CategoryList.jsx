@@ -46,9 +46,9 @@ const handleUpdateCategory = async (e) => {
 
     try {
       const result = await updateCategory({
-        categoryId: seletedCategory._id,
-        updatedCategory: {
-          name: updatingName,
+        categoryId : seletedCategory._id,
+        updatedCategory : {
+          name : updatingName,
         },
       }).unwrap();
 

@@ -13,8 +13,10 @@ app.use(cookieParser())
 
 import userRoute from "./route/userRoute.js"
 import categoryRoute from "./route/categoryRoute.js"
+import productRoute from "./route/productRoute.js"
 app.use("/api/v2", userRoute)
 app.use("/api/category", categoryRoute)
+app.use("/api/product",productRoute)
 app.listen(PORT,()=>{
     dbConnect()
     console.log(`server is listening on port : ${PORT}`);
