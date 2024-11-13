@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv"
 import cookieParser from "cookie-parser";
 import dbConnect from "./config/dbConnect.js";
+import path from "path"
 const app = express()
  dotenv.config({path : "api/config/config.env"})
 
@@ -14,9 +15,15 @@ app.use(cookieParser())
 import userRoute from "./route/userRoute.js"
 import categoryRoute from "./route/categoryRoute.js"
 import productRoute from "./route/productRoute.js"
+import uploadRoutes from "./route/uploadRoutes.js";
+import orderRoute from "./route/orderRoute.js"
 app.use("/api/v2", userRoute)
 app.use("/api/category", categoryRoute)
 app.use("/api/product",productRoute)
+app.use("/api/upload", uploadRoutes);
+app.use("/api/order",orderRoute)
+const __dirname = path.resolve();
+app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 app.listen(PORT,()=>{
     dbConnect()
     console.log(`server is listening on port : ${PORT}`);

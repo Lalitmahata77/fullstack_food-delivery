@@ -171,18 +171,18 @@ export const fetchNewProduct = asyncHandler(async(req,res,next)=>{
   }
 })
 
-export const filterProduct = asyncHandler(async(req,res,next)=>{
-try {
-    const {checked,ratio} = req.body;
-    const args = {}
-    if(checked.length >0) args.category = checked;
-    if(ratio.length) args.price = {$gte:ratio[0], $lte : ratio[1]}
-  
-    const products = await Product.find(args)
-    res.json(products)
-} catch (error) {
-  console.log(error);
-  res.status(500).json({error : "Internal server error"})
-  
-}
-})
+ export const filterProducts = asyncHandler(async (req, res) => {
+  try {
+    const { checked, radio } = req.body;
+
+    let args = {};
+    if (checked.length > 0) args.category = checked;
+    if (radio.length) args.price = { $gte: radio[0], $lte: radio[1] };
+
+    const products = await Product.find(args);
+    res.json(products);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server Error" });
+  }
+});
